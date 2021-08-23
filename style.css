@@ -48,14 +48,14 @@ main {
 }
 
 .input_container ul {
-	list-style: none;
+  list-style: none;
 }
 
 .input_container ul li {
-	padding: 1rem 0rem;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
+  padding: 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .input_container button {
@@ -82,29 +82,29 @@ main {
 }
 
 .input_container .note {
-	background-color: rgba(0, 0, 0, 0.4);
-	border-radius: 20px;
-	padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding: 1rem;
 }
 
 .input_container .note h2 {
-	padding: 1rem 0.5rem;
+  padding: 1rem 0.5rem;
 }
 
 .input_container .note li {
-	padding: 0.5rem;
+  padding: 0.5rem;
 }
 
 .input_container .note button {
   background-color: rgba(200, 200, 200, 0.1);
 }
 
-.copied{
-	visibility: hidden;
+.copied {
+  visibility: hidden;
 }
 
-.copied-active{
-	visibility: visible;
+.copied-active {
+  visibility: visible;
 }
 
 .gradient_container {
