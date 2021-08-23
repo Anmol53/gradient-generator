@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Gradient Generator</title>
-	<link rel="stylesheet" href="style.css" />
-</head>
-<body>
-	<main>
-		<div class="container input_container">
-			<h1>Gradient Generator</h1>
-		</div>
-		<div id="gradient_container" class="container gradient_container"></div>
-	</main>
-<script src="index.js" charset="utf-8"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradient Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container input_container">
+        <h1>Gradient Generator</h1>
+        <form id="input_form" action="" name="user_input">
+          <ul>
+            <li>
+              <button type="button" onclick="customizedGradient(this.form)">
+                Generate Gradient
+              </button>
+            </li>
+          </ul>
+        </form>
+        <div class="note">
+          <h2>Gradient CSS</h2>
+          <ul>
+            <li id="gradient_output"></li>
+            <li>
+				<button type="button" onclick="copyCSS()">
+					Copy CSS
+				  </button>	
+			</li>
+            <li class="copied">Copied!</li>
+          </ul>
+        </div>
+      </div>
+      <div id="gradient_container" class="container gradient_container"></div>
+    </main>
+    <script src="index.js" charset="utf-8"></script>
+  </body>
 </html>
