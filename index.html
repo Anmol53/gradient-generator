@@ -14,8 +14,26 @@
         <form id="input_form" action="" name="user_input">
           <ul>
             <li>
-              <button type="button" onclick="customizedGradient(this.form)">
-                Generate Gradient
+              <label for="angle_input">Gradient Angle</label>
+              <input
+                type="range"
+                min="0"
+                max="360"
+                name="angle"
+                id="angle_input"
+                value="90"
+                oninput="updateAngle()"
+                data-unit="°"
+              />
+              <div class="slider_info">
+                <span>0°</span>
+                <span id="angle_display">90°</span>
+                <span>360°</span>
+              </div>
+            </li>
+            <li>
+              <button type="button" onclick="generateGradient(this.form)">
+                Generate New Gradient
               </button>
             </li>
           </ul>

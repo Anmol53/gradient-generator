@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", (event) => {
   const body = document.querySelector("body");
-  const { backgroundColor, backgroundImage } = randomGradientGenerator();
+  const { backgroundColor, backgroundImage } = gradientGenerator();
   body.style.backgroundColor = backgroundColor;
   body.style.backgroundImage = backgroundImage;
   customizedGradient();
@@ -12,27 +12,47 @@ function randomColorGenerator() {
   return `#${randomColor}`;
 }
 
-function randomGradientGenerator({
+function gradientGenerator({
   angle = "90deg",
-  randomColor1 = randomColorGenerator(),
-  randomColor2 = randomColorGenerator(),
+  color1 = randomColorGenerator(),
+  color2 = randomColorGenerator(),
 } = {}) {
   return {
-    backgroundColor: `${randomColor1}`,
-    backgroundImage: `linear-gradient(${angle}, ${randomColor1} 0%, ${randomColor2} 100%)`,
+    backgroundColor: `${color1}`,
+    backgroundImage: `linear-gradient(${angle}, ${color1} 0%, ${color2} 100%)`,
   };
 }
 
-const customizedGradient = (input) => {
+let color1 = randomColorGenerator();
+let color2 = randomColorGenerator();
+let gradientAngle = "90deg";
+
+const updateAngle = () => {
+  const ele = document.querySelector('#angle_input');
+  const display = document.querySelector(`#${ele.name}_display`);
+  display.innerText = `${ele.value}${ele.getAttribute("data-unit")}`;
+  gradientAngle = `${ele.value}deg`;
+  customizedGradient();
+};
+
+const customizedGradient = () => {
   document.querySelector(".copied").classList.remove("copied-active");
-  const { backgroundColor, backgroundImage } = randomGradientGenerator();
+  const { backgroundColor, backgroundImage } = gradientGenerator({
+    angle: gradientAngle,
+    color1,
+    color2,
+  });
   const ele = document.querySelector("#gradient_container");
   ele.style.backgroundColor = backgroundColor;
   ele.style.backgroundImage = backgroundImage;
-  console.log("Hi");
   const output_display = document.querySelector("#gradient_output");
-  console.log("1", output_display);
   output_display.innerHTML = `background: ${backgroundColor};<br/>background-image: ${backgroundImage};`;
+};
+
+const generateGradient = (input) => {
+  color1 = randomColorGenerator();
+  color2 = randomColorGenerator();
+  customizedGradient();
 };
 
 const copyCSS = () => {
