@@ -6,16 +6,19 @@
 
 body {
   min-height: 100vh;
-  min-width: 100vw;
+  width: 100vw;
   font-family: sans-serif;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow-x: hidden;
 }
+
 main {
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
-  min-height: 100vh;
   width: 100%;
   padding: 1rem;
 }
@@ -63,9 +66,11 @@ input[type="range"] {
   width: 100%;
   -webkit-appearance: none;
 }
+
 input[type="range"]:focus {
   outline: none;
 }
+
 input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 2px;
@@ -75,6 +80,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   border-radius: 0px;
   border: 0px solid #010101;
 }
+
 input[type="range"]::-moz-range-track {
   width: 100%;
   height: 2px;
@@ -97,6 +103,7 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: -1.2rem;
 }
+
 input[type="range"]::-moz-range-thumb {
   box-shadow: none;
   border: 0px solid #ffffff;
@@ -109,6 +116,7 @@ input[type="range"]::-moz-range-thumb {
   -webkit-appearance: none;
   margin-top: -1.2rem;
 }
+
 input[type="range"]::-moz-focus-outer {
   border: 0;
 }
@@ -171,5 +179,53 @@ input[type="range"]::-moz-focus-outer {
 
 .gradient_container {
   flex: 5 1 400px;
-  min-height: 90vh;
+  min-height: 70vh;
+}
+
+footer {
+  width: 100%;
+  background-color: rgb(77, 67, 60, 0.5);
+}
+
+footer .copyright {
+  height: auto;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: rgb(130, 130, 130);
+  line-height: 2rem;
+  font-size: 0.7rem;
+  padding: 0.5rem;
+}
+
+footer .copyright a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.colored-text {
+  white-space: nowrap;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 500% 500%;
+  -webkit-animation: bgcolor 5s ease infinite;
+  -moz-animation: bgcolor 5s ease infinite;
+  animation: bgcolor 5s ease infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+@keyframes bgcolor {
+  0% {
+      background-position: 0% 50%;
+  }
+
+  50% {
+      background-position: 100% 50%;
+  }
+
+  100% {
+      background-position: 0% 50%;
+  }
 }
