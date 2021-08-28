@@ -9,6 +9,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
 function randomColorGenerator() {
   let x = Math.random();
   let randomColor = Math.floor(x * 16777215).toString(16);
+  while (randomColor.length < 6) {
+    randomColor = `0${randomColor}`;
+  }
   return `#${randomColor}`;
 }
 
